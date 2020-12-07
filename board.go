@@ -10,7 +10,12 @@ type Board struct {
 
 // NewBoard initializes an Othello board
 func NewBoard() Board {
-	return Board{}
+	b := Board{}
+	b.Pieces[3][3] = White
+	b.Pieces[4][3] = Black
+	b.Pieces[4][4] = White
+	b.Pieces[3][4] = Black
+	return b
 }
 
 // Print prints out the Othello board
