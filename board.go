@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 // Board contains the data for an othello board
 type Board struct {
 	Turn   bool
@@ -9,6 +11,22 @@ type Board struct {
 // NewBoard initializes an Othello board
 func NewBoard() Board {
 	return Board{}
+}
+
+// Print prints out the Othello board
+func (b *Board) Print() {
+	for _, row := range b.Pieces {
+		for _, piece := range row {
+			if piece == White {
+				fmt.Print("W ")
+			} else if piece == Black {
+				fmt.Print("B ")
+			} else if piece == Empty {
+				fmt.Print("* ")
+			}
+		}
+		fmt.Println()
+	}
 }
 
 // Piece is a position on an Othello Board
