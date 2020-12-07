@@ -2,5 +2,8 @@ package main
 
 func main() {
 	b := NewBoard()
-	b.Print()
+	for true {
+		b.Print()
+		b.Input()
+	}
 }
